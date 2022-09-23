@@ -14,7 +14,7 @@ public class Rectangle
     // This is the constructor to create a Rectangle object with a particular width and length
     public Rectangle(int rectLength, int rectWidth)
     {
-        length = rectLength;
+        length = rectLength;`
         width = rectWidth;
     }
 

@@ -20,23 +20,23 @@ public class U2L2Runner {
         rect3.setWidth(125);
         //rect3.printRectangleInfo();
 
-       int perimeter1 = rect1.getWidth() + rect1.getLength();
+       int perimeter1 = rect1.getWidth() + rect1.getLength() + rect1.getWidth() + rect1.getLength();
         System.out.println("The perimeter for rectangle 1 is " + perimeter1 + " feet");
-        int perimeter2 = rect2.getWidth() + rect2.getLength();
+        int perimeter2 = rect2.getWidth() + rect2.getLength() + rect2.getWidth() + rect2.getLength();
         System.out.println("The perimeter for rectangle 2 is " + perimeter2 + " feet");
-        int perimeter3 = rect3.getWidth() + rect3.getLength();
+        int perimeter3 = rect3.getWidth() + rect3.getLength() + rect3.getWidth() + rect3.getLength();
         System.out.println("The perimeter for rectangle 3 is " + perimeter3 + " feet");
         int perimeterTotal = perimeter1 + perimeter2 + perimeter3;
         System.out.println("The total length in fencing that will be needed to enclose all three plots of land is " + perimeterTotal + " feet");
 
-        int area1 = rect1.getWidth() * rect1.getLength();
-        System.out.println("The area for rectangle 1 is " + area1 + " feet");
-        int area2 = rect2.getWidth() * rect2.getLength();
-        System.out.println("The area for rectangle 2 is " + area2 + " feet");
-        int area3 = rect3.getWidth() * rect3.getLength();
-        System.out.println("The area for rectangle 3 is " + area3 + " feet");
-        int totalArea = area1 + area2 + area3;
-        System.out.println("The total area for all 3 rectangles are " + totalArea + " feet");
+        //int area1 = rect1.getWidth() * rect1.getLength();
+        //System.out.println("The area for rectangle 1 is " + area1 + " feet");
+        //int area2 = rect2.getWidth() * rect2.getLength();
+        //System.out.println("The area for rectangle 2 is " + area2 + " feet");
+        //int area3 = rect3.getWidth() * rect3.getLength();
+        //System.out.println("The area for rectangle 3 is " + area3 + " feet");
+        //int totalArea = area1 + area2 + area3;
+        //System.out.println("The total area for all 3 rectangles are " + totalArea + " feet");
 
         rect1.calculateArea();
         rect2.calculateArea();
@@ -61,10 +61,11 @@ public class U2L2Runner {
         int taxRate = s.nextInt();
         double percentTax = taxRate / 100.0;
         System.out.print("Percent tax rate is: " + percentTax);
+        System.out.println();
 
-        System.out.println( boardCost());
-
-
+        ConstructionPricer price1 = new ConstructionPricer (numberOfBoards, numberOfWindows, taxRate);
+        System.out.println("total material cost:" +
+        System.out.println("total cost after tax:" );
 
 
     }

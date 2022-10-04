@@ -58,15 +58,16 @@ public class U2L2Runner {
         System.out.print("Number of windows needed: ");
         int numberOfWindows = s.nextInt();
         System.out.print("Tax Rate within area: ");
-        int taxRate = s.nextInt();
+        double taxRate = s.nextDouble();
         double percentTax = taxRate / 100.0;
         System.out.print("Percent tax rate is: " + percentTax);
         System.out.println();
 
-        ConstructionPricer price1 = new ConstructionPricer (numberOfBoards, numberOfWindows, taxRate);
-        System.out.println("total material cost:" +
-        System.out.println("total cost after tax:" );
-
+        ConstructionPricer price1 = new ConstructionPricer (11.50, 25.75, taxRate);
+        double total = price1.materialsCost(numberOfBoards, numberOfWindows);
+        System.out.println(total);
+        double taxTotal = price1.totalWithTax(total);
+        System.out.println(taxTotal);
 
     }
 

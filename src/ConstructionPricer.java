@@ -1,19 +1,31 @@
-public class ConstructionPricer {
-    private double boardPrice = 11.50;
-    private double windowPrice = 25.75 ;
-    private double taxRate;
+public class ConstructionPricer
+{
+    private double boardPrice;  // price per board
+    private double windowPrice; // price per square inch of window
+    private double taxRate;     // tax rate, e.g 25% = 0.25
 
-
-    public ConstructionPricer(int boardPrice, int windowPrice, int taxRate) {
+    public ConstructionPricer(double boardPrice, double windowPrice, double taxRate)
+    {
         this.boardPrice = boardPrice;
         this.windowPrice = windowPrice;
         this.taxRate = taxRate;
-
     }
-    public double costOfBoards()
+
+    // Computes and returns the total materials cost (WITHOUT tax)
+    public double materialsCost(int numBoards, int numWindows)
     {
-        double costBoards = boardPrice * numberOfBoards ;
-        return costBoards;
+        double windowCost = windowPrice * numWindows;
+        double lumberCost = boardPrice * numBoards;
+        double total = windowCost + lumberCost;
+        return total;
     }
 
+    // When this method is provided with a total materials cost as a parameter,
+    // it will compute the tax and return the grand total WITH TAX ADDED
+    public double totalWithTax(double totalMaterialCost)
+    {
+        double tax = totalMaterialCost * (taxRate / 100.0);
+        return totalMaterialCost + tax;
+    }
 }
+
